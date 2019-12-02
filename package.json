@@ -1,0 +1,19 @@
+{
+  "name": "adventofcode",
+  "version": "1.0.0",
+  "description": "Advent of Code Challenges",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/wandi34/adventOfCode.git"
+  },
+  "author": "Andreas Winter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wandi34/adventOfCode/issues"
+  },
+  "homepage": "https://github.com/wandi34/adventOfCode#readme"
+}
