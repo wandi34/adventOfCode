@@ -4,7 +4,8 @@
   "description": "Advent of Code Challenges",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "tsc test/*test.ts --module commonjs",
+    "test": "mocha --require node_modules/@babel/register"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,18 @@
   "bugs": {
     "url": "https://github.com/wandi34/adventOfCode/issues"
   },
-  "homepage": "https://github.com/wandi34/adventOfCode#readme"
+  "homepage": "https://github.com/wandi34/adventOfCode#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/register": "^7.7.4",
+    "@types/node": "^12.12.14",
+    "mocha": "^6.2.2"
+  },
+  "dependencies": {
+    "@types/mocha": "^5.2.7",
+    "lodash": "^4.17.15",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.2"
+  }
 }
