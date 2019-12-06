@@ -19,22 +19,22 @@ import { crossedWires } from '../src/crossedWires'
 var assert = require('assert');
 describe('Array', function() {
   describe('should return an array', function() {
-    // it('should return a number for testinput', function() {
-    //   // assert.ok(typeof crossedWires(test4_w1, test4_w2) === 'number');
-    //   assert.equal(crossedWires(test4_w1, test4_w2), 2);
-    // });
+    it('should return a number for testinput', function() {
+      // assert.ok(typeof crossedWires(test4_w1, test4_w2) === 'number');
+      assert.equal(crossedWires(test4_w1, test4_w2), 2);
+    });
 
-    // it('should return a number for testinput 1', function() {
-    //   assert.equal(crossedWires(test1_w1, test1_w2), result1);
-    // });
+    it('should return a number for testinput 1', function() {
+      assert.equal(crossedWires(test1_w1, test1_w2), result1);
+    });
 
-    // it('should return a number for testinput 3', function() {
-    //   assert.equal(crossedWires(test3_w1, test3_w2), result3);
-    // });
+    it('should return a number for testinput 3', function() {
+      assert.equal(crossedWires(test3_w1, test3_w2), result3);
+    });
 
-    // it('should return a number for testinput 2', function() {
-    //   assert.equal(crossedWires(test2_w1, test2_w2), result2);
-    // });
+    it('should return a number for testinput 2', function() {
+      assert.equal(crossedWires(test2_w1, test2_w2), result2);
+    });
 
     it('should return solution for exercise', function() {
       console.log("Solution for exercise3 :" + crossedWires(exercise_w1, exercise_w2));
