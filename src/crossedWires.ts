@@ -1,10 +1,23 @@
-export function crossedWires(wire1: string[], wire2: string[]): number {
+export function shortestDirectCrossFromStart(wire1: string[], wire2: string[]): number {
   const cursorList_w1: string[] = iterateWire(wire1)
   const cursorList_w2: string[] = iterateWire(wire2)
 
   const crossedCursors: string[] = Array.from(getSameElements(new Set(cursorList_w1), new Set(cursorList_w2)))
   const distances: number[] = crossedCursors.map(c => Math.abs(Number(c.split('|')[0])) + Math.abs(Number(c.split('|')[1])))
   return distances.sort((a, b) => a - b)[0]
+}
+
+export function shortestWiredCrossFromStart(wire1: string[], wire2: string[]): number {
+  const cursorList_w1: string[] = iterateWire(wire1)
+  const cursorList_w2: string[] = iterateWire(wire2)
+
+  const crossedCursors: string[] = Array.from(getSameElements(new Set(cursorList_w1), new Set(cursorList_w2)))
+  const distances: number[] = crossedCursors.map(c => findIndexInWire(c, cursorList_w1) + findIndexInWire(c, cursorList_w2))
+  return distances.sort((a, b) => a - b)[0]
+}
+
+function findIndexInWire(cursor: string, wire: string[]): number {
+  return wire.findIndex(c => c === cursor)
 }
 
 function getSameElements(cursorSet1: Set<string>, cursorSet2: Set<string>): Set<string> {

@@ -1,13 +1,24 @@
 "use strict";
 exports.__esModule = true;
-function crossedWires(wire1, wire2) {
+function shortestDirectCrossFromStart(wire1, wire2) {
     var cursorList_w1 = iterateWire(wire1);
     var cursorList_w2 = iterateWire(wire2);
     var crossedCursors = Array.from(getSameElements(new Set(cursorList_w1), new Set(cursorList_w2)));
     var distances = crossedCursors.map(function (c) { return Math.abs(Number(c.split('|')[0])) + Math.abs(Number(c.split('|')[1])); });
     return distances.sort(function (a, b) { return a - b; })[0];
 }
-exports.crossedWires = crossedWires;
+exports.shortestDirectCrossFromStart = shortestDirectCrossFromStart;
+function shortestWiredCrossFromStart(wire1, wire2) {
+    var cursorList_w1 = iterateWire(wire1);
+    var cursorList_w2 = iterateWire(wire2);
+    var crossedCursors = Array.from(getSameElements(new Set(cursorList_w1), new Set(cursorList_w2)));
+    var distances = crossedCursors.map(function (c) { return findIndexInWire(c, cursorList_w1) + findIndexInWire(c, cursorList_w2); });
+    return distances.sort(function (a, b) { return a - b; })[0];
+}
+exports.shortestWiredCrossFromStart = shortestWiredCrossFromStart;
+function findIndexInWire(cursor, wire) {
+    return wire.findIndex(function (c) { return c === cursor; });
+}
 function getSameElements(cursorSet1, cursorSet2) {
     var result = new Set();
     cursorSet1.forEach(function (cursor) {
